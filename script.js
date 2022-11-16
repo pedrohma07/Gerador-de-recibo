@@ -15,35 +15,15 @@ function gerarRecibo(){
     const rg_emitente = document.getElementById("rg-emitente").value;
     
 
-    if( validaCampos(valor) == true) {
-        return;
-    }
-    if( validaCampos(valorExtenso) == true) {
-        return;
-    }
-    if(validaCampos(referente) == true) {
-        return;
-    };
-    if(validaCampos(nomePag) == true) {
-        return;
-    };
-    if(validaCampos(cpfCnpjPag) == true) {
-        return;
-    };
-    if(validaCampos(local) == true) {
-        return;
-    };
-    if(validaCampos(nome_emitente) == true){
-        return;
-    };
-    if(validaCampos(cpf_cnpj_emitente) == true) {
-        return;
-    };
-    if(validaCampos(rg_emitente) == true) {
-        return;
-    };
-
-
+    if(validaCampos(valor) == true) {return;}
+    if(validaCampos(valorExtenso) == true) {return;}
+    if(validaCampos(referente) == true) {return;};
+    if(validaCampos(nomePag) == true) {return;};
+    if(validaCampos(cpfCnpjPag) == true) {return;};
+    if(validaCampos(local) == true) {return;};
+    if(validaCampos(nome_emitente) == true){return;};
+    if(validaCampos(cpf_cnpj_emitente) == true) {return;};
+    if(validaCampos(rg_emitente) == true) {return;};
 
     const janela =window.open("","", "width=800", "height=600");
     janela.document.write(`<!DOCTYPE html>
@@ -54,26 +34,27 @@ function gerarRecibo(){
         <link rel="stylesheet" href="style-recibo.css">
     </head>
     <body>
-        <h1>Recibo:</h1>
-        <div class="container">
-            <span>Nome do pagador: ${nomePag}</span> 
-            <span>valor: ${valor}</span> 
-            <span>valor (por extenso): ${valorExtenso}</span> 
-            <span>Referente: ${referente}</span> 
-            <span>CPF/CNPJ do pagador: ${cpfCnpjPag}</span>
-            <span>Local da emissão: ${local}</span>
-            <span class="line"></span>
-            <span>Nome do emitente: ${nome_emitente}</span> 
-            <span>CPF/CNPJ do emitente: ${cpf_cnpj_emitente}</span>
-            <span>RG do emitente: ${rg_emitente}</span> 
-            <div class="container-cheque">
-                <span>N° do cheque: ${cheque.numero_cheque.value}</span>
-                <span>Banco do cheque: ${cheque.banco_cheque.value}</span>
-                <span>Agencia do cheque: ${cheque.agencia_cheque.value}</span>
+        <div class="principal">
+            <h1>Recibo:</h1>
+            <div class="container">
+                <span>Nome do pagador: ${nomePag}</span> 
+                <span>valor: ${valor}</span> 
+                <span>valor (por extenso): ${valorExtenso}</span> 
+                <span>Referente: ${referente}</span> 
+                <span>CPF/CNPJ do pagador: ${cpfCnpjPag}</span>
+                <span>Local da emissão: ${local}</span>
+                <span class="line"></span>
+                <span>Nome do emitente: ${nome_emitente}</span> 
+                <span>CPF/CNPJ do emitente: ${cpf_cnpj_emitente}</span>
+                <span>RG do emitente: ${rg_emitente}</span> 
+                <div class="container-cheque">
+                    <span>N° do cheque: ${cheque.numero_cheque.value}</span>
+                    <span>Banco do cheque: ${cheque.banco_cheque.value}</span>
+                    <span>Agencia do cheque: ${cheque.agencia_cheque.value}</span>
+                </div>
             </div>
         </div>
         <button onclick="imprimir()">Imprimir</button>
-
         <script src="script.js">
         </script>
     </body>
@@ -81,7 +62,6 @@ function gerarRecibo(){
     `);
     
     janela.document.close();
-    
 }
 
 function validaCampos(campo){
