@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    color: black;
+    background-color: rgb(174, 176, 210);
+}
+.container-wallpaper{
+    height: 100%;
+    width: 30%;
+    background-image: url(assets/checkout-menor.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 610px;
+    width: 70%;
+    margin-top: 5px;
+    margin-right: 10px;
+    background-color: rgb(255,255,255);
+    border: 1px black solid ;
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px rgb(55, 48, 70);;
+}
+
+.bloc-input{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bloc-input input{
+    height: 30px;
+    width: 80%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+label, p{
+    margin-left: 20px;
+}
+.buttons{
+   display: flex; 
+   justify-content: center;
+}
+.buttons button{
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: 1px 1px 1px 1px black;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1059px){
+    .container-wallpaper{
+        display: none;
+    }
+    body{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 909px){
+    .div-cheque{
+        display: flex;
+        flex-direction: column;
+    }
+    .div-cheque input{
+        align-self: center;
+        width: 70%;
+        margin-left: 10px;
+    }
+    .container{
+        width: 95%;
+        height: 95vh;
+    }
+    form{
+        width: 90%;
+    }
+    
+}
+
+@media screen and (max-height: 610px){
+    body{
+        align-items: flex-start;
+    }
+    
+    
+}
