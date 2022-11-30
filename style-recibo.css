@@ -35,10 +35,3 @@ span{
 .container-cheque span{
     width: 30%;
 }
-button{
-    background-color: white;
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px 45%;
-    cursor: pointer;
-}

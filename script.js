@@ -13,17 +13,16 @@ function gerarRecibo(){
     const nome_emitente = document.getElementById("nome-emitente").value;
     const cpf_cnpj_emitente = document.getElementById("cpf-cnpj-emitente").value;
     const rg_emitente = document.getElementById("rg-emitente").value;
-    
 
     if(validaCampos(valor) == true) {return;}
-    if(validaCampos(valorExtenso) == true) {return;}
-    if(validaCampos(referente) == true) {return;};
-    if(validaCampos(nomePag) == true) {return;};
-    if(validaCampos(cpfCnpjPag) == true) {return;};
-    if(validaCampos(local) == true) {return;};
-    if(validaCampos(nome_emitente) == true){return;};
-    if(validaCampos(cpf_cnpj_emitente) == true) {return;};
-    if(validaCampos(rg_emitente) == true) {return;};
+    else if(validaCampos(valorExtenso) == true) {return;}
+    else if(validaCampos(referente) == true) {return;}
+    else if(validaCampos(nomePag) == true) {return;}
+    else if(validaCampos(cpfCnpjPag) == true) {return;}
+    else if(validaCampos(local) == true) {return;}
+    else if(validaCampos(nome_emitente) == true){return;}
+    else if(validaCampos(cpf_cnpj_emitente) == true) {return;}
+    else if(validaCampos(rg_emitente) == true) {return;}
 
     const janela =window.open("","", "width=800", "height=600");
     janela.document.write(`<!DOCTYPE html>
@@ -54,19 +53,17 @@ function gerarRecibo(){
                 </div>
             </div>
         </div>
-        <button onclick="imprimir()">Imprimir</button>
-        <script src="script.js">
-        </script>
     </body>
     </html>
     `);
+
+    setTimeout(() => {janela.print()}, 1000);
+    janela.document.close(); 
     
-    janela.document.close();
 }
 
 function validaCampos(campo){
     if(campo == null || campo == undefined || campo == ""){
-        console.log("teste");
         alert("Preencha todos os campos obrigatórios");
         return true;
     }
@@ -77,7 +74,6 @@ function validaCampos(campo){
 
 function limpar() {
     const form = document.getElementById("form-recibo").reset();    
-
 }
 
 function imprimir(){
